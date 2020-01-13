@@ -92,3 +92,32 @@ Nginx 目录： `/etc/nginx`
 
 
 
+
+
+一键脚本安装V2Ray+WebSocket+TLS+Nginx
+
+两个安装方式（不兼容，二选一）
+
+1.Vmess+websocket+TLS+Nginx+Website：
+bash <(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log
+
+2.Vmess + HTTP2 over TLS：
+bash <(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install_h2.sh) | tee v2ray_ins_h2.log
+
+如果提示 curl: command not found ，那是因为你的小鸡没装 Curl
+ubuntu/debian 系统安装 Curl 方法: apt-get update -y && apt-get install curl -y
+centos 系统安装 Curl 方法: yum update -y && yum install curl -y
+安装好 curl 之后就能安装脚本了
+
+三、脚本启动方式
+
+启动 V2ray：systemctl start v2ray
+
+停止 V2ray：systemctl stop v2ray
+
+启动 Nginx：systemctl start nginx
+
+停止 Nginx：systemctl stop nginx
+
+
+
